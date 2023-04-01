@@ -1,4 +1,3 @@
-import ChatInput from '../components/ChatInput';
 import ChatMessages from '../components/ChatMessages';
 
 const Chat = () => {
