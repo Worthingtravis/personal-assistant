@@ -1,13 +1,17 @@
-import Link from 'next/link'
-import Layout from '../components/Layout'
+// pages/index.tsx
 
-const IndexPage = () => (
-  <Layout title="Home | Next.js + TypeScript Example">
-    <h1>Hello Next.js 👋</h1>
-    <p>
-      <Link href="/about">About</Link>
-    </p>
-  </Layout>
-)
+import ChatInput from '../components/ChatInput';
+import ChatMessages from '../components/ChatMessages';
+import { useChat } from '../contexts/ChatContext';
 
-export default IndexPage
+export default function Home() {
+    const { messages, sendMessage } = useChat();
+
+    return (
+        <div>
+            <h1>Personal Assistant</h1>
+            <ChatMessages/>
+            <ChatInput onSubmitMessage={sendMessage} />
+        </div>
+    );
+}
